@@ -19,12 +19,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('sort_order')->default(0);
             $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('number');
-            $table->string('company');
-            $table->string('subject')->nullable(); 
+            $table->string('last_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('number')->nullable();
+            $table->string('company')->nullable();
+            $table->string('subject')->nullable();
             $table->text('message');
+            $table->boolean('is_read')->default(false);
 
 
             $table->timestamps();

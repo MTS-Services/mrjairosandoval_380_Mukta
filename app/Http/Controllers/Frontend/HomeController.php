@@ -44,10 +44,7 @@ class HomeController extends Controller
         return view('frontend.pages.mamber.memberShip', $data);
     }
 
-    public function contact()
-    {
-        return view('frontend.pages.contact.contact');
-    }
+    
 
     public function insight()
     {

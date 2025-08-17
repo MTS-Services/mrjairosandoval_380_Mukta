@@ -39,6 +39,24 @@
     </script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- sweetalert2 --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('success'))
+                showAlert('success', '{{ session('success') }}');
+            @endif
+
+            @if (session('error'))
+                showAlert('error', '{{ session('error') }}');
+            @endif
+
+            @if (session('warning'))
+                showAlert('warning', '{{ session('warning') }}');
+            @endif
+        });
+
+        const content_image_upload_url = '{{ route('file.ci_upload') }}';
+    </script>
 
     @stack('cs')
 </head>
@@ -46,7 +64,7 @@
 <body class="font-sans antialiased bg-black">
     <div class="min-h-screen bg-black">
         @include('frontend.layouts.partials.header')
-        
+
         <!-- Page Heading -->
         @isset($header)
             <header class="bg-white shadow-sm">
