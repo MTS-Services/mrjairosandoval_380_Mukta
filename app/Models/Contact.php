@@ -19,13 +19,18 @@ class Contact extends BaseModel
         'email',
         'number',
         'company',
-       
+        'subject',
+        'message',
 
         'created_by',
         'updated_by',
         'deleted_by',
 
 
+    ];
+
+    protected $casts = [
+        'is_read' => 'boolean',
     ];
 
     public function __construct(array $attributes = [])

@@ -17,13 +17,14 @@
                 </p>
 
                 <!-- Form -->
-                <form class="font-(family-name:--font-family-secondary)">
+                <form action="{{ route('f.contact.store') }}" enctype="multipart/form-data" method="POST" class="font-(family-name:--font-family-secondary)">
+                    @csrf
                     <!-- Name -->
                     <div class="text-left   ">
                         <label class="text-xs text[#E5E3E3] m-2 text-3xl font-serif font-semibold ">Name (we'll forget
                             it
                             immediately)</label>
-                        <input type="text" placeholder="Your ephemeral designation."
+                        <input type="text" placeholder="Your ephemeral designation." name="first_name"
                             class="m-2 w-full bg-transparent border border-gray-800 rounded-lg text-sm text-[#E5E3E3] px-6 py-3 focus:outline-none focus:border-[#caa36b]" />
                     </div>
 
@@ -33,7 +34,7 @@
                             introduced you to...
                             certain tastes? (If
                             none, lie.)</label>
-                        <input type="text" placeholder="The whisper, rounded-lg the sign, the omen..."
+                        <input type="text" placeholder="The whisper, rounded-lg the sign, the omen..." name="subject"
                             class="m-2 rounded-lg w-full bg-transparent border border-gray-800 text-sm text-[#E5E3E3] px-6 py-3 focus:outline-none focus:border-[#caa36b]" />
                     </div>
 
@@ -44,7 +45,7 @@
                             <span class="italic">(e.g.
                                 Patience)</span>
                         </label>
-                        <input type="text" placeholder="The strength you conceal..."
+                        <input type="text" placeholder="The strength you conceal..." name="message"
                             class="m-2 w-full bg-transparent rounded-lg border border-gray-800 text-sm text-[#E5E3E3] px-6 py-3 focus:outline-none focus:border-[#caa36b]" />
                     </div>
 
